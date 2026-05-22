@@ -1,18 +1,16 @@
-// App.js
-// Root entry point of the application.
-// Renders the HomeScreen as the main screen.
-
 import React from 'react';
-import { SafeAreaView, StyleSheet, StatusBar } from 'react-native';
-import HomeScreen from './src/screens/HomeScreen';
+import { StyleSheet, StatusBar } from 'react-native';
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import HomeScreen from './HomeScreen';
 
 export default function App() {
   return (
-    // SafeAreaView ensures content is not hidden behind notches or status bars
-    <SafeAreaView style={styles.container}>
-      <StatusBar barStyle="light-content" backgroundColor="#1a1a2e" />
-      <HomeScreen />
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
+        <StatusBar barStyle="light-content" backgroundColor="#1a1a2e" />
+        <HomeScreen />
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 
