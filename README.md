@@ -115,4 +115,4 @@ service cloud.firestore {
 ## 🔒 6. Before Going to Production
 - Replace open Firestore rules with authenticated rules
 - Add Firebase Authentication
-- Move your `firebaseConfig` values to environment variables (`.env`)
+- Move your `firebaseConfig` values to environment variables (`.env`).
